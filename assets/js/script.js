@@ -14,17 +14,23 @@ const search = document.getElementById('search')
 /**
  *
  *  Gets the results when data is returned and turns it into JSON data */
-async function findMovies(url) {
+async function findFilms(url) {
     const results = await fetch(url)
     const filmData = await results.json()
 }
 
 /**
- * Primary Fucntion of the app, loops through the return results from findMovies() and creates a card for each results, with the data
+ * Primary FUnction of the app, loops through the return results from findMovies() and creates a card for each results, with the data
  */
-function buildResults(movies) {
-    for (let movie in movies) {
-        movie = [title, poster_path, vote_average, overview]
+function buildResults(films) {
+    for (let film of films) {
+        film = [title, poster_path, vote_average, overview]
+
+        //Create cards for each result
+        const filmCard = document.createElement('div')
+        filmCard.classList.add('film-card')
+
+        main.appendChild(filmCard)
     }
 }
 
@@ -37,7 +43,7 @@ form.addEventListener('submit',function(e){
     console.log(searchInput)
 
     if(searchInput) {
-        findMovies(SEARCH_API + searchInput)
+        findFilms(SEARCH_API + searchInput)
         search.value = ''                                           // Clearing the search value after a submissions
         // main.innerHTML = `<h1>${SEARCH_API + searchInput}</h1>`
     } else  {
