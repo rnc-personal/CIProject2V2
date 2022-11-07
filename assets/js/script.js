@@ -19,7 +19,7 @@ async function findFilms(url) {
     const data = await res.json()
 
     buildResults(data.results)
-    console.log(`Response:${res}| Data:${data}`)
+    
 }
 
 /**
@@ -27,21 +27,23 @@ async function findFilms(url) {
  */
 function buildResults(films) {
     films.forEach((film) => {
-        // let film = [title, poster_path, vote_average, overview]                                     // BUG: Storing this as an array doesnt work
-
+        const {
+            title,
+            poster_path,
+            vote_average,
+            overview
+        } = film
+        
         const filmCard = document.createElement('div')
         filmCard.classList.add('film-card')
 
         //Filling Card with the data that is returned
         filmCard.innerHTML = `
-        <img src="assets/img/logo.svg" alt="card">
+        <img src="${IMG_PATH + poster_path}" alt="card">
         `
         //Create cards for each result
         main.appendChild(filmCard)
     })
-    
-
-    
 
 
 }
