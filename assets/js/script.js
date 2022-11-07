@@ -45,7 +45,7 @@ function buildResults(films) {
         //Filling Card with the data that is returned
         filmCard.innerHTML = `
             <img src="${IMG_PATH + poster_path}" alt="${title}">
-            <div class="movie-info">
+            <div class="film-info">
                 <h3>${title}</h3>
                 <span class="score">${vote_average}</span>
             </div>

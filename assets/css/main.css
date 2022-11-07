@@ -66,6 +66,30 @@ header {
     height: 400px;
 }
 
+.overview {
+    background-color: var(--focus-highlight);
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.film-card:hover .overview {
+    transform: translateY(0);
+}
+
 .film-card img {
     width: 100%;
+}
+
+.film-info {
+    background-color:  var(--focus-highlight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem 1rem;
 }
