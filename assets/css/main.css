@@ -13,7 +13,9 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: #1f1f1f;
+    font-size: 0.9rem;
     background-color: var(--primary-color);
     height: 2000px;
 }
@@ -23,10 +25,17 @@ header {
     border-bottom: 4px solid var(--focus-highlight);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem;
     position: fixed;
     width: 100%;
     z-index: 10;
+}
+
+header h1 {
+    color: white;
+    font-size: 1.3rem;
+    margin-right: auto;
 }
 
 #form {
@@ -51,6 +60,7 @@ header {
 
 #main {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding-top: 100px;
 }
