@@ -13,7 +13,9 @@ const search = document.getElementById('search')
 
 /**
  *
- *  Gets the results when data is returned and turns it into JSON data */
+ *  Gets the results when data is returned and turns it into JSON data.
+ * the url parameter is passed the full SEARCH_API + searchInput (the users request) to make a complete fetch request.
+ * The results are then passed into the buildResults functions (films) parameter with the response, which is a JSON object. */
 async function findFilms(url) {
     const res = await fetch(url)
     const data = await res.json()
