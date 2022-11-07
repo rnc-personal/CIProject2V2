@@ -77,9 +77,9 @@ header {
     transition: transform 0.3s ease-in-out;
 }
 
-/* .film-card:hover .overview {
+.film-card:hover .overview {
     transform: translateY(0);
-} */
+}
 
 .film-card img {
     width: 100%;
