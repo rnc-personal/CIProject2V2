@@ -4,10 +4,7 @@ const form = document.getElementById('form')
 const search = document.getElementById('search')
 const test = document.querySelector('.test')
 
-
-console.log(test)
-
-
+//Test for Event handling/Generating element
 test.addEventListener('click', function() {
   
     const card = document.createElement('div')
