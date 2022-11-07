@@ -32,7 +32,7 @@ function buildResults(films) {
 
         //Filling Card with the data that is returned
         filmCard.innerHTML = `
-        <img src="${IMG_PATH + poster_path}" alt="${title}">
+        <img src="assets/img/logo.svg" alt="card">
         `
         main.appendChild(filmCard)
     })
