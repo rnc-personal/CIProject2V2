@@ -19,16 +19,30 @@ async function findMovies(url) {
     const filmData = await results.json()
 }
 
+/**
+ * Primary Fucntion of the app, loops through the return results from findMovies() and creates a card for each results, with the data
+ */
+function buildResults(movies) {
+    for (let movie in movies) {
+        movie = [title, poster_path, vote_average, overview]
+    }
+
+
+
+}
 
 form.addEventListener('submit',function(e){
     //Using preventDefault as we want to submit the search terms but not have the page reload
     e.preventDefault()
     console.log('submitted')
+
     searchInput = search.value
     console.log(searchInput)
 
     if(searchInput) {
-        main.innerHTML = `<h1>${SEARCH_API + searchInput}</h1>`
+        findMovies(SEARCH_API + searchInput)
+        console.log(findMovies)
+        // main.innerHTML = `<h1>${SEARCH_API + searchInput}</h1>`
     } else if (searchInput == '') {
         window.location.reload()
     }
