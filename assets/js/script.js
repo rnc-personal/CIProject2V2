@@ -26,9 +26,6 @@ function buildResults(movies) {
     for (let movie in movies) {
         movie = [title, poster_path, vote_average, overview]
     }
-
-
-
 }
 
 form.addEventListener('submit',function(e){
@@ -41,9 +38,9 @@ form.addEventListener('submit',function(e){
 
     if(searchInput) {
         findMovies(SEARCH_API + searchInput)
-        console.log(findMovies)
+        search.value = ''                                           // Clearing the search value after a submissions
         // main.innerHTML = `<h1>${SEARCH_API + searchInput}</h1>`
-    } else if (searchInput == '') {
+    } else  {
         window.location.reload()
     }
 })
