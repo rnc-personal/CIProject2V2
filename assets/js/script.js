@@ -8,6 +8,18 @@ const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 
+//Using a promise to only display results when we have the data back
+//reference: https://dmitripavlutin.com/javascript-fetch-async-await/
+
+/**
+ *
+ *  Gets the results when data is returned and turns it into JSON data */
+async function findMovies(url) {
+    const results = await fetch(url)
+    const filmData = await results.json()
+}
+
+
 form.addEventListener('submit',function(e){
     //Using preventDefault as we want to submit the search terms but not have the page reload
     e.preventDefault()
