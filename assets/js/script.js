@@ -26,7 +26,8 @@ async function findFilms(url) {
  */
 function buildResults(films) {
     films.forEach((film) => {
-
+        // let film = [title, poster_path, vote_average, overview]                                     // BUG: Storing this as an array doesnt work
+        
         const filmCard = document.createElement('div')
         filmCard.classList.add('film-card')
 
@@ -34,11 +35,12 @@ function buildResults(films) {
         filmCard.innerHTML = `
         <img src="assets/img/logo.svg" alt="card">
         `
+        //Create cards for each result
         main.appendChild(filmCard)
     })
-    // let film = [title, poster_path, vote_average, overview]                                     // BUG: Storing this as an array doesnt work
+    
 
-    //Create cards for each result
+    
 
 
 }
