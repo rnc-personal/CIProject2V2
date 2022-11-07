@@ -20,6 +20,7 @@ body {
 header {
     background-color: var(--secondary-color);
     display: flex;
+    justify-content: space-between;
     padding: 1rem;
     position: fixed;
     width: 100%;
