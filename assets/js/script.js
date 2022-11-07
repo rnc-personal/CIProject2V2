@@ -11,7 +11,7 @@ console.log(test)
 test.addEventListener('click', function() {
   
     const card = document.createElement('div')
-    card.classList.add('card-test');
+    card.classList.add('film-card');
     main.appendChild(card)
 
 })

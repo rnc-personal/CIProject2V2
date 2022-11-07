@@ -51,7 +51,7 @@ header {
     padding-top: 100px;
 }
 
-.card-test {
+.film-card {
     width: 300px;
     margin: 1rem;
     background-color: var(--secondary-color);
