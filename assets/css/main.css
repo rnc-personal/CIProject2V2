@@ -46,7 +46,7 @@ header {
 .search:focus {
     outline: none;
     border-bottom: 4px solid var(--focus-highlight);
-    
+
 }
 
 #main {
@@ -86,7 +86,7 @@ header {
 }
 
 .film-info {
-    background-color:  var(--focus-highlight);
+    background-color: var(--focus-highlight);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -101,4 +101,25 @@ header {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+span {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #2d2d2d;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+span.green {
+    color: aquamarine;
+}
+
+span.orange {
+    color: orange;
+}
+
+span.red {
+    color: crimson;
 }
