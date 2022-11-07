@@ -24,6 +24,7 @@ The site has been run through Lighthouse and scores as follows:
 
 There were a few bugs during development, all of which were resolved by the end of the project. These are as follows:
 
+- having trouble getting back the actual data from the request in Line 29/30. The data returned is not being stored correctly (currently another array)
 
 
 ----------------------

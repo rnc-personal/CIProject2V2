@@ -15,19 +15,19 @@ const search = document.getElementById('search')
  *
  *  Gets the results when data is returned and turns it into JSON data */
 async function findFilms(url) {
-    const results = await fetch(url)
-    const filmData = await results.json()
+    const res = await fetch(url)
+    const data = await res.json()
 
-    buildResults(filmData.results)
+    buildResults(data.results)
 }
 
 /**
- * Primary FUnction of the app, loops through the return results from findMovies() and creates a card for each results, with the data
+ * Primary Function of the app, loops through the return results from findMovies() and creates a card for each results, with the data
  */
 function buildResults(films) {
     
     for (let film of films) {
-        let film = [title, poster_path, vote_average, overview]                                     // BUG: Storing this as an array doesnt work
+        // let film = [title, poster_path, vote_average, overview]                                     // BUG: Storing this as an array doesnt work
 
         //Create cards for each result
         const filmCard = document.createElement('div')
@@ -35,7 +35,7 @@ function buildResults(films) {
 
         //Filling Card with the data that is returned
         filmCard.innerHTML = `
-        <img src="${IMG_PATH + film[1]}" alt="${title}">
+        <img src="${IMG_PATH + poster_path}" alt="${title}">
         `
 
         main.appendChild(filmCard)
