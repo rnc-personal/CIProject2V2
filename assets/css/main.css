@@ -63,7 +63,7 @@ header {
     position: relative;
     overflow: hidden;
     border-radius: 3px;
-    height: 400px;
+  
 }
 
 .overview {
@@ -78,9 +78,9 @@ header {
     transition: transform 0.3s ease-in-out;
 }
 
-.film-card:hover .overview {
+/* .film-card:hover .overview {
     transform: translateY(0);
-}
+} */
 
 .film-card img {
     width: 100%;
@@ -92,4 +92,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0.5rem 1rem 1rem;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
