@@ -26,7 +26,7 @@ async function findFilms(url) {
  */
 function buildResults(films) {
     for (let film of films) {
-        let film = [title, poster_path, vote_average, overview]
+        let film = ['title', 'poster_path', 'vote_average', 'overview']
 
         //Create cards for each result
         const filmCard = document.createElement('div')
