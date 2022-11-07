@@ -21,7 +21,6 @@ async function findFilms(url) {
     const data = await res.json()
 
     buildResults(data.results)
-
 }
 
 /**
@@ -35,6 +34,7 @@ function buildResults(films) {
             vote_average,
             overview
         } = film
+
         //The data and the response are both objects so the properties we want to use are defined here (using their names in the object/API docs)
         //A 'film' is made up of those specific object properties and can be used to output the data.
         //The loop returns the next set of data and will apply the specific data to that card below:
@@ -47,7 +47,7 @@ function buildResults(films) {
             <img src="${IMG_PATH + poster_path}" alt="${title}">
             <div class="film-info">
                 <h3>${title}</h3>
-                <span class="score">${vote_average}</span>
+                <span class="${applyScoreClass(vote_average)}">${vote_average}</span>
             </div>
             <div class="overview">
                 <h3>Overview</h3>
@@ -58,8 +58,20 @@ function buildResults(films) {
         //Create cards for each result. Additional closing div to close the one created in line 42
         main.appendChild(filmCard)
     })
+}
 
+/**This applies a class dynamically based on the score value returned for the API
+ * The 'vote' parameter will receive the 'vote_average' data from the buildResults function/data
+ */
 
+function applyScoreClass(vote) {
+    if(vote >= 8) {
+        return 'green'
+    } else if (vote >= 5) {
+        return 'orange'
+    } else {
+        return 'red'
+    }
 }
 
 form.addEventListener('submit', function (e) {
