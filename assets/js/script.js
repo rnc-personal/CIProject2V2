@@ -1,0 +1,9 @@
+// defining some generic elements to use
+const main = document.getElementById('main')
+const form = document.getElementById('form')
+const search = document.getElementById('search')
+
+
+console.log(main)
+console.log(form)
+console.log(search)
