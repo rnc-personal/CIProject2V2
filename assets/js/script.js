@@ -12,3 +12,7 @@ const test = document.querySelector('.test')
 //     main.appendChild(card)
 
 // })
+
+form.addEventListener('submit',function(){
+    console.log('submitted')
+})
