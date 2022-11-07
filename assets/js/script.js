@@ -17,6 +17,8 @@ const search = document.getElementById('search')
 async function findFilms(url) {
     const results = await fetch(url)
     const filmData = await results.json()
+
+    buildResults(filmData.results)
 }
 
 /**
@@ -24,7 +26,7 @@ async function findFilms(url) {
  */
 function buildResults(films) {
     for (let film of films) {
-        film = [title, poster_path, vote_average, overview]
+        let film = [title, poster_path, vote_average, overview]
 
         //Create cards for each result
         const filmCard = document.createElement('div')
