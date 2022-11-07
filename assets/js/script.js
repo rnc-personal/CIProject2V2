@@ -5,10 +5,10 @@ const search = document.getElementById('search')
 const test = document.querySelector('.test')
 
 //Test for Event handling/Generating element
-test.addEventListener('click', function() {
+// test.addEventListener('click', function() {
   
-    const card = document.createElement('div')
-    card.classList.add('film-card');
-    main.appendChild(card)
+//     const card = document.createElement('div')
+//     card.classList.add('film-card');
+//     main.appendChild(card)
 
-})
+// })
