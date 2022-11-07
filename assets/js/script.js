@@ -25,12 +25,18 @@ async function findFilms(url) {
  * Primary FUnction of the app, loops through the return results from findMovies() and creates a card for each results, with the data
  */
 function buildResults(films) {
+    
     for (let film of films) {
-        let film = ['title', 'poster_path', 'vote_average', 'overview']
+        let film = [title, poster_path, vote_average, overview]                                     // BUG: Storing this as an array doesnt work
 
         //Create cards for each result
         const filmCard = document.createElement('div')
         filmCard.classList.add('film-card')
+
+        //Filling Card with the data that is returned
+        filmCard.innerHTML = `
+        <img src="${IMG_PATH + film[1]}" alt="${title}">
+        `
 
         main.appendChild(filmCard)
     }
