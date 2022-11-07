@@ -44,6 +44,14 @@ The site was deployed to GitHub pages following the below steps:
     - AUTH: https://developers.themoviedb.org/3/getting-started/authentication
     - IMAGES: https://developers.themoviedb.org/3/getting-started/images
 
+- HANDLING ASYNC DATA:
+    Primary Article: https://www.dalejefferson.com/articles/2018-02-06-async-await-promise-all-array-destructuring/
+        
+        - Additional Resources that lead me to the above:
+        - https://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call?noredirect=1&lq=1
+        - https://medium.com/sliit-foss/js-async-await-in-array-methods-9142a35c6d6f
+        
+
 ---------------------
 
 
