@@ -65,3 +65,7 @@ header {
     border-radius: 3px;
     height: 400px;
 }
+
+.film-card img {
+    width: 100%;
+}

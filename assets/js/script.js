@@ -33,13 +33,16 @@ function buildResults(films) {
             vote_average,
             overview
         } = film
+        //The data and the response are both objects so the properties we want to use are defined here (using their names in the object/API docs)
+        //A 'film' is made up of those specific object properties and can be used to output the data.
+        //The loop returns the next set of data and will apply the specific data to that card below:
         
         const filmCard = document.createElement('div')
         filmCard.classList.add('film-card')
 
         //Filling Card with the data that is returned
         filmCard.innerHTML = `
-        <img src="${IMG_PATH + poster_path}" alt="card">
+        <img src="${IMG_PATH + poster_path}" alt="${title}">
         `
         //Create cards for each result
         main.appendChild(filmCard)
