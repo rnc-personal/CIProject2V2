@@ -19,6 +19,7 @@ async function findFilms(url) {
     const data = await res.json()
 
     buildResults(data.results)
+    console.log(`Response:${res}| Data:${data}`)
 }
 
 /**
@@ -27,7 +28,7 @@ async function findFilms(url) {
 function buildResults(films) {
     films.forEach((film) => {
         // let film = [title, poster_path, vote_average, overview]                                     // BUG: Storing this as an array doesnt work
-        
+
         const filmCard = document.createElement('div')
         filmCard.classList.add('film-card')
 
