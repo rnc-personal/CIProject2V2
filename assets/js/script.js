@@ -21,7 +21,7 @@ async function findFilms(url) {
     const data = await res.json()
 
     buildResults(data.results)
-    
+
 }
 
 /**
@@ -38,15 +38,24 @@ function buildResults(films) {
         //The data and the response are both objects so the properties we want to use are defined here (using their names in the object/API docs)
         //A 'film' is made up of those specific object properties and can be used to output the data.
         //The loop returns the next set of data and will apply the specific data to that card below:
-        
+
         const filmCard = document.createElement('div')
         filmCard.classList.add('film-card')
 
         //Filling Card with the data that is returned
         filmCard.innerHTML = `
-        <img src="${IMG_PATH + poster_path}" alt="${title}">
+            <img src="${IMG_PATH + poster_path}" alt="${title}">
+            <div class="movie-info">
+                <h3>${title}</h3>
+                <span class="score">${vote_average}</span>
+            </div>
+            <div class="overview">
+                <h3>Overview</h3>
+                ${overview}
+            </div>
+        </div>
         `
-        //Create cards for each result
+        //Create cards for each result. Additional closing div to close the one created in line 42
         main.appendChild(filmCard)
     })
 
