@@ -4,21 +4,24 @@ const TRENDING_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=58b02
 const LATEST_URL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=58b0219670380f0425dd7bec4738e064'
 const UPCOMING_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=58b0219670380f0425dd7bec4738e064&page=1'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
-const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query="'  //note the space in readme
+const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query="' //note the space in readme
 
 // defining some generic elements to use
 const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 const trendingSection = document.querySelector('.trending')
+const newReleases = document.querySelector('.new-releases')
+
+let loadPoint1 = window.pageYOffset || document.documentElement.scrollTop;
+console.log(loadPoint1)
 
 //Make an initial call to results function so the page is not blank - returns most popular results
 //Results depend on page
-console.log(window.location.pathname)
-if (window.location.pathname == '/index.html') {
-    document.body.style.cssText = "height:1415px"
-    findFilms(TRENDING_URL)
 
+if (window.location.pathname == '/index.html') {
+    document.body.style.cssText = "height:1300px"
+    findFilms(TRENDING_URL)
 } else {
     findFilms(UPCOMING_URL)
 }
@@ -42,11 +45,11 @@ async function findFilms(url) {
  */
 function buildResults(films) {
 
-if (window.location.pathname === '/search.html') {
-    //clears the default results when a search request is submitted and this function is called.
-        main.innerHTML= ''
+    if (window.location.pathname === '/search.html') {
+        //clears the default results when a search request is submitted and this function is called.
+        main.innerHTML = ''
     }
-    
+
     // Destructuring the response (see notes/references)
     films.forEach((film) => {
         const {
@@ -81,7 +84,7 @@ if (window.location.pathname === '/search.html') {
         if (window.location.pathname === '/index.html') {
             trendingSection.appendChild(filmCard)
         } else if (window.location.pathname === '/search.html') {
-        main.appendChild(filmCard)
+            main.appendChild(filmCard)
         }
     })
 }
@@ -91,7 +94,7 @@ if (window.location.pathname === '/search.html') {
  */
 
 function applyScoreClass(vote) {
-    if(vote >= 8) {
+    if (vote >= 8) {
         return 'green'
     } else if (vote >= 5) {
         return 'orange'
@@ -107,9 +110,9 @@ form.addEventListener('submit', function (e) {
     const searchInput = search.value
 
     if (searchInput) {
-       findFilms(SEARCH_API + searchInput)
+        findFilms(SEARCH_API + searchInput)
         // Clearing the search value after a submissions
-        search.value = '' 
+        search.value = ''
     } else {
         window.location.reload()
     }
