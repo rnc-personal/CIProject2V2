@@ -139,7 +139,20 @@ section.hero-slides {
 .promo-card-next {
     height: 50px;
     width: 50px;
-    background-color: white;
+    background-color: #666666;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    
+}
+
+.promo-card-next {
+    background-image: url(/assets/img/mini-chev-right.png);
+    
+}
+
+.promo-card-prev {
+    background-image: url(/assets/img/mini-chev-left.png);
 }
 
 /*********/
