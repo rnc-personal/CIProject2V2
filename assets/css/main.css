@@ -122,6 +122,26 @@ section.hero-slides {
     transform: scale(1.15);
 }
 
+/* Home Card Carousel controls */
+
+.mini-controls {
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    gap: 10px;
+    align-items: center;
+    transform: translateX(-50%);
+}
+
+.promo-card-prev,
+.promo-card-next {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+}
+
 /*********/
 /* FONTS */
 /*********/
