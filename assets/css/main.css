@@ -88,11 +88,23 @@ section.hero-slides {
 .slide {
     position: absolute;
     transition: all 0.5s;
+    display: grid;
+    place-items: center;
+}
+
+.hero-rte {
+    position: absolute;
+    color: white;
+    left: 55%;
+    height: 60%;
+    bottom: 0%;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2.5rem;
 }
 
 .controls {
     z-index: 5;
-    display: flex;  
+    display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -109,6 +121,7 @@ section.hero-slides {
 .controls img:hover {
     transform: scale(1.15);
 }
+
 /*********/
 /* FONTS */
 /*********/
