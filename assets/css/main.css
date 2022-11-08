@@ -20,7 +20,7 @@ body {
     color: #1f1f1f;
     font-size: 0.9rem;
     background-color: var(--primary-color);
-    height: 2000px;
+    height: 2600px;
     position: relative;
     overflow-x: hidden;
 }
@@ -54,9 +54,22 @@ section {
     width: 100%;
     max-width: 1400px;
     background-color: var(--secondary-color);
-    height: 300px;
+    height: 540px;
     border: var(--focus-highlight);
     margin: 1rem 0;
+    position: relative;
+
+}
+.trending {
+    position: absolute;
+    left: -130px;
+}
+
+.trending,
+.new-releases,
+.upcoming {
+    display: flex;
+
 }
 
 section.hero-slides {
@@ -127,6 +140,8 @@ section h3 {
     position: relative;
     overflow: hidden;
     border-radius: 3px;
+    min-width: 300px;
+    min-height: 370px;
 }
 
 .overview {
