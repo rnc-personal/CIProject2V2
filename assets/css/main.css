@@ -66,6 +66,7 @@ section {
     position: absolute;
     left: -30vw;
     margin: 0 2vw;
+    animation: cardscroll 10s;
 }
 
 .trending,
@@ -73,6 +74,16 @@ section {
 .upcoming {
     display: flex;
 
+}
+
+@keyframes cardscroll {
+    0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-200vw);
+	}
 }
 
 section.hero-slides {
