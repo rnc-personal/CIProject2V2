@@ -340,4 +340,12 @@ span.red {
         margin: 0 auto;
         height: 45px;
     }
+
+    section.hero-slides {
+        margin: 6rem 0 0 0;
+    }
+
+    .promo {
+        margin: 0;
+    }
 }
