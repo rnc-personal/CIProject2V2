@@ -20,13 +20,14 @@ const upcomingSection = document.querySelector('.upcoming')
 console.log(window.location.pathname)
 if (window.location.pathname == '/index.html') {
     console.log('Homepage')
+
     // for (let i = 0 ; i < homeApiReq.length; i++) {
     //         findFilms(i)
-    //     }
+    // }
 
     findFilms(TRENDING_URL)
-    findFilms(LATEST_URL) // Issue running this 3 times at once. setInterval doesnt work
-    findFilms(UPCOMING_URL)
+    // findFilms(LATEST_URL) // Issue running this 3 times at once. setInterval doesnt work
+    // findFilms(UPCOMING_URL)
 } else if (window.location.pathname == '/search.html') {
     findFilms(API_URL)
 }
