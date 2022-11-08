@@ -45,6 +45,12 @@ async function findFilms(url) {
  * Primary Function of the app, loops through the return results from findMovies() and creates a card for each results, with the data
  */
 function buildResults(films) {
+
+if (window.location.pathname === '/search.html') {
+    //clears the default results when a search request is submitted and this function is called.
+        main.innerHTML= ''
+    }
+    
     films.forEach((film) => {
         const {
             title,
@@ -75,13 +81,14 @@ function buildResults(films) {
         `
         //Create cards for each result. Additional closing div to close the one created in line 42
         // TO DO, Conditionally append to different sections. Main for search page. Different Sections
-        if (window.location.pathname == '/index.html') {
+        if (window.location.pathname === '/index.html') {
             trendingSection.appendChild(filmCard)
 
             // newSection.appendChild(filmCard)
             // upcomingSection.appendChild(filmCard)
-        } else 
+        } else if (window.location.pathname === '/search.html') {
         main.appendChild(filmCard)
+        }
     })
 }
 
@@ -109,7 +116,7 @@ form.addEventListener('submit', function (e) {
 
     if (searchInput) {
        findFilms(SEARCH_API + searchInput)
-       
+
         search.value = '' // Clearing the search value after a submissions
     } else {
         window.location.reload()
