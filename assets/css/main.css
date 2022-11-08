@@ -154,7 +154,7 @@ section.hero-slides {
     transform: translateX(-50%);
 }
 
-.promo-card-prev,
+/* .promo-card-prev,
 .promo-card-next {
     height: 50px;
     width: 50px;
@@ -172,7 +172,7 @@ section.hero-slides {
 
 .promo-card-prev {
     background-image: url(/assets/img/mini-chev-left.png);
-}
+} */
 
 /*********/
 /* FONTS */
