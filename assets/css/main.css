@@ -252,6 +252,7 @@ section h3 {
     transition: transform 0.3s ease-in-out;
 }
 
+/* Fix for hover on mobile */
 @media(hover: hover) and (pointer: fine) {
     .film-card:hover .overview {
         transform: translateY(101%);
