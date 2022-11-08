@@ -80,15 +80,7 @@ section {
 
 }
 
-@keyframes cardscroll {
-    0% {
-        transform: translateX(0);
-    }
 
-    100% {
-        transform: translateX(-100vw);
-    }
-}
 
 section.hero-slides {
     position: relative;
@@ -307,7 +299,19 @@ span.red {
 }
 
 
+/* ANIMATION */
+@keyframes cardscroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
 /* RESPONSIVE */
+
 
 @media screen and (max-width:1200px) {
     .hero-rte {
