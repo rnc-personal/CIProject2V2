@@ -322,6 +322,7 @@ span.red {
     header {
        display: grid;
        place-items: center;
+       justify-content: center;
     }
 
     header h1 {
