@@ -328,6 +328,11 @@ span.red {
     header h1 {
         margin-right: unset;
     }
+
+    section h3 {
+        text-align: center;
+    }
+
     .search {
         width: 80vw;
         margin: 0 auto;
