@@ -10,11 +10,13 @@ const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670
 const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
+const trendingSection = document.querySelector('.trending')
 
 //Make an initall call to results function so the page is not blank - returns most popular results
 console.log(window.location.pathname)
 if (window.location.pathname == '/index.html') {
     console.log('Homepage')
+    findFilms(TRENDING_URL)
 } else if (window.location.pathname == '/search.html') {
     findFilms(API_URL)
 }
@@ -68,7 +70,11 @@ function buildResults(films) {
         `
         //Create cards for each result. Additional closing div to close the one created in line 42
         // TO DO, Conditionally append to different sections. Main for search page. Different Sections
+        if (window.location.pathname == '/index.html') {
+            trendingSection.appendChild(filmCard)
+        } else {
         main.appendChild(filmCard)
+        }
     })
 }
 
