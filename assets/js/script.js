@@ -84,6 +84,7 @@ function applyScoreClass(vote) {
 
 form.addEventListener('submit', function (e) {
     //Using preventDefault as we want to submit the search terms but not have the page reload
+   
     e.preventDefault()
     console.log('submitted')
 
