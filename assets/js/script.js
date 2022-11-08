@@ -21,7 +21,76 @@ console.log(loadPoint1)
 
 if (window.location.pathname == '/index.html') {
     document.body.style.cssText = "height:1300px"
-    findFilms(TRENDING_URL)
+    
+
+//******
+//Home Hero Slides
+//******
+const slides = document.querySelectorAll('.slide')
+
+//Looping through slide elements to form an array and set their position
+slides.forEach((slide, idx) => {
+    slide.style.transform = `translateX(${idx * 100}%)`;
+});
+
+//Slider Animation
+let currentSlide = 0;
+let maxSlides = slides.length - 1
+
+const prevSlide = document.querySelector('.btn-prev')
+const nextSlide = document.querySelector('.btn-next')
+
+// Next Control - On clicking the controls, update the slide: 
+nextSlide.addEventListener('click', function () {
+    if (currentSlide === maxSlides) {
+        currentSlide = 0
+    } else {
+        currentSlide++
+    }
+
+    slides.forEach((slide, idx) => {
+        slide.style.transform = `translateX(${100 * (idx - currentSlide)}%)`
+    })
+})
+
+// Prev Control - On clicking the controls, update the slide if its not the first one: 
+prevSlide.addEventListener('click', function () {
+    if (currentSlide === 0) {
+        currentSlide = 0
+    } else {
+        currentSlide--
+    }
+
+    slides.forEach((slide, idx) => {
+        slide.style.transform = `translateX(${100 * (idx - currentSlide)}%)`
+    })
+})
+
+//Called here so the below event listeners can apply to the loaded cards
+findFilms(TRENDING_URL)
+
+//////////////////////////////////////////////////
+//******
+//Home Cards
+//******
+
+document.addEventListener('DOMContentLoaded', function() {
+    let cards = document.querySelectorAll('.trending .film-card')
+    let nextBtn = document.querySelector('.promo-card-next')
+    let prevBtn = document.querySelector('.promo-card-prev')
+    let slideIncrement = -80
+
+    nextBtn.addEventListener('click', () => {
+        console.log('click')
+        trendingSection.style.cssText = `left:${slideIncrement}px`
+    })
+
+    prevBtn.addEventListener('click', () => {
+        console.log('click')
+        trendingSection.style.cssText = `right:${slideIncrement}px`
+    })
+})
+
 } else {
     findFilms(UPCOMING_URL)
 }
