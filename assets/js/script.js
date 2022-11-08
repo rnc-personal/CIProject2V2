@@ -21,28 +21,6 @@ console.log(window.location.pathname)
 if (window.location.pathname == '/index.html') {
     findFilms(TRENDING_URL)
 
-    
-    Promise.all([
-        fetch(TRENDING_URL),
-        fetch(LATEST_URL),
-        fetch(UPCOMING_URL)
-      ]).then(allResponses => {
-        const response1 = allResponses[0]
-        const response2 = allResponses[1]
-        const response3 = allResponses[2]
-
-        console.log(response1)
-        console.log(response2)
-        console.log(response3)
-
-        findFilms(response1)
-        findFilms(response2)
-        findFilms(response3)
-
-    })
-
-
-
 } else {
     findFilms(UPCOMING_URL)
 }
@@ -104,8 +82,6 @@ if (window.location.pathname === '/search.html') {
         // TO DO, Conditionally append to different sections. Main for search page. Different Sections
         if (window.location.pathname === '/index.html') {
             trendingSection.appendChild(filmCard)
-            newSection.appendChild(filmCard)
-            upcomingSection.appendChild(filmCard)
         } else if (window.location.pathname === '/search.html') {
         main.appendChild(filmCard)
         }
