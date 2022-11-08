@@ -66,7 +66,11 @@ section {
     position: absolute;
     left: -30vw;
     margin: 0 2vw;
-    animation: cardscroll 10s;
+    animation: cardscroll 30s alternate-reverse infinite;
+}
+
+.trending:hover {
+    animation-play-state: paused;
 }
 
 .trending,
@@ -78,12 +82,12 @@ section {
 
 @keyframes cardscroll {
     0% {
-		transform: translateX(0);
-	}
+        transform: translateX(0);
+    }
 
-	100% {
-		transform: translateX(-200vw);
-	}
+    100% {
+        transform: translateX(-200vw);
+    }
 }
 
 section.hero-slides {
@@ -111,6 +115,14 @@ section.hero-slides {
     bottom: 0%;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2.5rem;
+}
+
+@media screen and (max-width:1200px) {
+    .hero-rte {
+        transform: translateX(-50%);
+        left: 50%;
+        height: 25%;
+    }
 }
 
 .controls {
@@ -154,12 +166,12 @@ section.hero-slides {
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
-    
+
 }
 
 .promo-card-next {
     background-image: url(/assets/img/mini-chev-right.png);
-    
+
 }
 
 .promo-card-prev {
@@ -242,6 +254,12 @@ section h3 {
     max-height: 100%;
     transform: translateY(101%);
     transition: transform 0.3s ease-in-out;
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .film-card:hover .overview {
+        transform: translateY(101%);
+    }
 }
 
 .film-card:hover .overview {
