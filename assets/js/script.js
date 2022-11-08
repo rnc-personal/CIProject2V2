@@ -1,10 +1,12 @@
 //API 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=58b0219670380f0425dd7bec4738e064&page=1'
 const TRENDING_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=58b0219670380f0425dd7bec4738e064&page=1'
-const LATEST_URL = 'https://api.themoviedb.org/3/movie/latest?api_key=58b0219670380f0425dd7bec4738e064&page=1'
+const LATEST_URL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=58b0219670380f0425dd7bec4738e064'
 const UPCOMING_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=58b0219670380f0425dd7bec4738e064&page=1'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query="' //note the space in readme
+
+let homeApiReq = [TRENDING_URL, LATEST_URL, UPCOMING_URL]
 
 // defining some generic elements to use
 const main = document.getElementById('main')
@@ -18,10 +20,13 @@ const upcomingSection = document.querySelector('.upcoming')
 console.log(window.location.pathname)
 if (window.location.pathname == '/index.html') {
     console.log('Homepage')
-    
+    // for (let i = 0 ; i < homeApiReq.length; i++) {
+    //         findFilms(i)
+    //     }
+
     findFilms(TRENDING_URL)
-    // findFilms(LATEST_URL) // Issue running this 3 times at once. setInterval doesnt work
-    // findFilms(UPCOMING_URL)
+    findFilms(LATEST_URL) // Issue running this 3 times at once. setInterval doesnt work
+    findFilms(UPCOMING_URL)
 } else if (window.location.pathname == '/search.html') {
     findFilms(API_URL)
 }
