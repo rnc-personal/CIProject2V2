@@ -86,7 +86,7 @@ section {
     }
 
     100% {
-        transform: translateX(-200vw);
+        transform: translateX(-100vw);
     }
 }
 
@@ -117,13 +117,7 @@ section.hero-slides {
     padding: 2.5rem;
 }
 
-@media screen and (max-width:1200px) {
-    .hero-rte {
-        transform: translateX(-50%);
-        left: 50%;
-        height: 25%;
-    }
-}
+
 
 .controls {
     z-index: 5;
@@ -307,4 +301,35 @@ span.orange {
 
 span.red {
     color: crimson;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width:1200px) {
+    .hero-rte {
+        transform: translateX(-50%);
+        left: 50%;
+        height: 25%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    html  {
+        overflow-x: hidden;
+    }
+
+    header {
+       display: grid;
+       place-items: center;
+    }
+
+    header h1 {
+        margin-right: unset;
+    }
+    .search {
+        width: 80vw;
+        margin: 0 auto;
+        height: 45px;
+    }
 }
