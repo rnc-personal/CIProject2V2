@@ -90,7 +90,7 @@
      */
     function buildResults(films) {
 
-        if (window.location.pathname === '/CIProject2V2/') {
+        if (window.location.pathname === '/CIProject2V2/search.html') {
             //clears the default results when a search request is submitted and this function is called.
             main.innerHTML = ''
         }
@@ -126,9 +126,9 @@
         `
             //Create cards for each result. Additional closing div to close the one created in line 42
             //Conditionally appends different cards depending on page.
-            if (window.location.pathname === '/index.html') {
+            if (window.location.pathname === '/CIProject2V2/index.html') {
                 trendingSection.appendChild(filmCard)
-            } else if (window.location.pathname === '/search.html') {
+            } else if (window.location.pathname === '/CIProject2V2/search.html') {
                 main.appendChild(filmCard)
             }
         })
