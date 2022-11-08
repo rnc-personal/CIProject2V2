@@ -4,9 +4,8 @@ const TRENDING_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=58b02
 const LATEST_URL = 'https://api.themoviedb.org/3/movie/now_playing?api_key=58b0219670380f0425dd7bec4738e064'
 const UPCOMING_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=58b0219670380f0425dd7bec4738e064&page=1'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
-const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query=" '  //note the space in readme
-const SEARCH_API2 = `https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&`
-let homeApiReq = [TRENDING_URL, LATEST_URL, UPCOMING_URL]
+const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query="'  //note the space in readme
+
 
 // defining some generic elements to use
 const main = document.getElementById('main')
@@ -17,14 +16,14 @@ const newSection = document.querySelector('.new-releases')
 const upcomingSection = document.querySelector('.upcoming')
 
 
-//Make an initall call to results function so the page is not blank - returns most popular results
+//Make an initial call to results function so the page is not blank - returns most popular results
 console.log(window.location.pathname)
 if (window.location.pathname == '/index.html') {
     findFilms(TRENDING_URL)
     // findFilms(LATEST_URL) // Issue running this 3 times at once. setInterval doesnt work
     // findFilms(UPCOMING_URL)
-} else if (window.location.pathname == '/search.html') {
-    findFilms(API_URL)
+} else {
+    findFilms(UPCOMING_URL)
 }
 
 //Using a promise to only display results when we have the data back
@@ -36,7 +35,6 @@ if (window.location.pathname == '/index.html') {
  * the url parameter is passed the full SEARCH_API + searchInput (the users request) to make a complete fetch request.
  * The results are then passed into the buildResults functions (films) parameter with the response, which is a JSON object. */
 async function findFilms(url) {
-    console.log("i got called", url)
     const res = await fetch(url)
     const data = await res.json()
 
@@ -77,16 +75,13 @@ function buildResults(films) {
         `
         //Create cards for each result. Additional closing div to close the one created in line 42
         // TO DO, Conditionally append to different sections. Main for search page. Different Sections
-        // if (window.location.pathname == '/index.html') {
-        //     // trendingSection.appendChild(filmCard)
-        //  //   console.log(filmCard, "film card")
-        //     console.log(newSection, "trending")
-        //     // newSection.innerHTML += filmCard
-        //     newSection.appendChild(filmCard)
-        //     // upcomingSection.appendChild(filmCard)
-        // } else {
+        if (window.location.pathname == '/index.html') {
+            trendingSection.appendChild(filmCard)
+
+            // newSection.appendChild(filmCard)
+            // upcomingSection.appendChild(filmCard)
+        } else 
         main.appendChild(filmCard)
-        // }
     })
 }
 
@@ -106,19 +101,15 @@ function applyScoreClass(vote) {
 
 form.addEventListener('submit', function (e) {
     //Using preventDefault as we want to submit the search terms but not have the page reload
-   
     e.preventDefault()
     console.log('submitted')
 
-    searchInput = search.value
+    const searchInput = search.value
     console.log(searchInput)
 
     if (searchInput) {
-       console.log(SEARCH_API + `'${searchInput}'`, "string")
+       findFilms(SEARCH_API + searchInput)
        
-       // findFilms(`${SEARCH_API2}query="${searchInput}"`)
-    //    findFilms(`https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query=${searchInput}`)
-        // main.innerHTML = `<h1>${SEARCH_API + searchInput}</h1>`
         search.value = '' // Clearing the search value after a submissions
     } else {
         window.location.reload()
