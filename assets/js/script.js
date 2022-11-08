@@ -15,6 +15,12 @@ const search = document.getElementById('search')
 const trendingSection = document.querySelector('.trending')
 const newSection = document.querySelector('.new-releases')
 const upcomingSection = document.querySelector('.upcoming')
+const slides = document.querySelectorAll('.slide')
+
+//Looping through slide elements to form an array and set their position
+slides.forEach((slide, idx) => {
+    slide.style.transform = `translateX(${idx * 100}%)`;
+  });
 
 //Make an initall call to results function so the page is not blank - returns most popular results
 console.log(window.location.pathname)
