@@ -64,6 +64,7 @@ function buildResults(films) {
         </div>
         `
         //Create cards for each result. Additional closing div to close the one created in line 42
+        // TO DO, Conditionally append to different sections. Main for search page. Different Sections
         main.appendChild(filmCard)
     })
 }
