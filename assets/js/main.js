@@ -42,9 +42,39 @@ prevSlide.addEventListener('click', function() {
     })
 })
 
+//////////////////////////////////////////////////
 //******
 //Home Cards
 //******
 
 let visibleTrendingCards = document.querySelectorAll('.trending .film-card')
 let maxTrendingCards = visibleTrendingCards.length - 1
+
+const prevTrending = document.querySelector('.promo-card-prev')
+const nextTrending = document.querySelector('.promo-card-next')
+
+// Next Control - On clicking the controls, update the slide: 
+nextTrending.addEventListener('click', function() {
+    // if (currentSlide === maxSlides) {
+    //     currentSlide = 0
+    // } else {
+    //     currentSlide++
+    // }
+
+    visibleTrendingCards.forEach((slide, idx) => {
+        cardTrend.style.transform = `translateX(${100 * (idx - currentSlide)}%)`
+    })
+})
+
+// Prev Control - On clicking the controls, update the slide if its not the first one: 
+prevTrending.addEventListener('click', function() {
+    // if (currentSlide === 0) {
+    //     currentSlide = 0
+    // } else {
+    //     currentSlide--
+    // }
+
+    visibleTrendingCards.forEach((slide, idx) => {
+        cardTrend.style.transform = `translateX(${100 * (idx - currentSlide)}%)`
+    })
+})
