@@ -9,7 +9,12 @@ const form = document.getElementById('form')
 const search = document.getElementById('search')
 
 //Make an initall call to results function so the page is not blank - returns most popular results
-findFilms(API_URL)
+console.log(window.location.pathname)
+if (window.location.pathname == '/index.html') {
+    console.log('Homepage')
+} else if (window.location.pathname == '/search.html') {
+    findFilms(API_URL)
+}
 
 //Using a promise to only display results when we have the data back
 //reference: https://dmitripavlutin.com/javascript-fetch-async-await/
