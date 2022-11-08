@@ -1,7 +1,7 @@
 const slides = document.querySelectorAll('.slide')
 
 //******
-//Home Slides
+//Home Hero Slides
 //******
 
 //Looping through slide elements to form an array and set their position
@@ -41,3 +41,10 @@ prevSlide.addEventListener('click', function() {
         slide.style.transform = `translateX(${100 * (idx - currentSlide)}%)`
     })
 })
+
+//******
+//Home Cards
+//******
+
+let visibleTrendingCards = document.querySelectorAll('.trending .film-card')
+let maxTrendingCards = visibleTrendingCards.length - 1
