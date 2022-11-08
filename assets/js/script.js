@@ -6,31 +6,28 @@ const UPCOMING_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=58b021
 const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query="'  //note the space in readme
 
-
 // defining some generic elements to use
 const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 const trendingSection = document.querySelector('.trending')
-const newSection = document.querySelector('.new-releases')
-const upcomingSection = document.querySelector('.upcoming')
-
 
 //Make an initial call to results function so the page is not blank - returns most popular results
+//Results depend on page
 console.log(window.location.pathname)
 if (window.location.pathname == '/index.html') {
+    document.body.style.cssText = "height:1415px"
     findFilms(TRENDING_URL)
 
 } else {
     findFilms(UPCOMING_URL)
 }
 
-//Using a promise to only display results when we have the data back
+//Using async to only display results when we have the data back
 //reference: https://dmitripavlutin.com/javascript-fetch-async-await/
 
 /**
- *
- *  Gets the results when data is returned and turns it into JSON data.
+ * Gets the results when data is returned and turns it into JSON data.
  * the url parameter is passed the full SEARCH_API + searchInput (the users request) to make a complete fetch request.
  * The results are then passed into the buildResults functions (films) parameter with the response, which is a JSON object. */
 async function findFilms(url) {
@@ -50,6 +47,7 @@ if (window.location.pathname === '/search.html') {
         main.innerHTML= ''
     }
     
+    // Destructuring the response (see notes/references)
     films.forEach((film) => {
         const {
             title,
@@ -79,7 +77,7 @@ if (window.location.pathname === '/search.html') {
         </div>
         `
         //Create cards for each result. Additional closing div to close the one created in line 42
-        // TO DO, Conditionally append to different sections. Main for search page. Different Sections
+        //Conditionally appends different cards depending on page.
         if (window.location.pathname === '/index.html') {
             trendingSection.appendChild(filmCard)
         } else if (window.location.pathname === '/search.html') {
@@ -105,15 +103,13 @@ function applyScoreClass(vote) {
 form.addEventListener('submit', function (e) {
     //Using preventDefault as we want to submit the search terms but not have the page reload
     e.preventDefault()
-    console.log('submitted')
 
     const searchInput = search.value
-    console.log(searchInput)
 
     if (searchInput) {
        findFilms(SEARCH_API + searchInput)
-
-        search.value = '' // Clearing the search value after a submissions
+        // Clearing the search value after a submissions
+        search.value = '' 
     } else {
         window.location.reload()
     }
