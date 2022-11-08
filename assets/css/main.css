@@ -141,7 +141,9 @@ section.hero-slides {
 
 /* Home Card Carousel controls */
 
+/* Removed as unable to resolve issue */
 .mini-controls {
+    display: none;
     bottom: 0;
     position: absolute;
     display: flex;
