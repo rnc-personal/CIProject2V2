@@ -17,7 +17,7 @@
     //Make an initial call to results function so the page is not blank - returns most popular results
     //Results depend on page
 
-    if (window.location.pathname == '/index.html') {
+    if (window.location.pathname == '/CIProject2V2/index.html') {
         document.body.style.cssText = "height:1300px"
 
         //******
@@ -90,7 +90,7 @@
      */
     function buildResults(films) {
 
-        if (window.location.pathname === '/search.html') {
+        if (window.location.pathname === '/CIProject2V2/') {
             //clears the default results when a search request is submitted and this function is called.
             main.innerHTML = ''
         }
