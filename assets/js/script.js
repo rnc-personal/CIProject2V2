@@ -11,12 +11,16 @@ const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 const trendingSection = document.querySelector('.trending')
+const newSection = document.querySelector('.new-releases')
+const upcomingSection = document.querySelector('.upcoming')
 
 //Make an initall call to results function so the page is not blank - returns most popular results
 console.log(window.location.pathname)
 if (window.location.pathname == '/index.html') {
     console.log('Homepage')
     findFilms(TRENDING_URL)
+    // findFilms(LATEST_URL) // films is undefined on this one
+    // findFilms(UPCOMING_URL)
 } else if (window.location.pathname == '/search.html') {
     findFilms(API_URL)
 }
@@ -72,6 +76,8 @@ function buildResults(films) {
         // TO DO, Conditionally append to different sections. Main for search page. Different Sections
         if (window.location.pathname == '/index.html') {
             trendingSection.appendChild(filmCard)
+            // newSection.appendChild(filmCard)
+            // upcomingSection.appendChild(filmCard)
         } else {
         main.appendChild(filmCard)
         }
