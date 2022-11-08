@@ -76,6 +76,7 @@ section {
 }
 
 section.hero-slides {
+    display: flex;
     max-width: 100vw;
     height: 500px;
     margin: 6rem 0 1rem 0;
