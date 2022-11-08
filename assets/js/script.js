@@ -1,5 +1,8 @@
 //API 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=58b0219670380f0425dd7bec4738e064&page=1'
+const TRENDING_URL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=58b0219670380f0425dd7bec4738e064&page=1'
+const LATEST_URL = 'https://api.themoviedb.org/3/movie/latest?api_key=58b0219670380f0425dd7bec4738e064&page=1'
+const UPCOMING_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=58b0219670380f0425dd7bec4738e064&page=1'
 const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query="' //note the space in readme
 
