@@ -18,8 +18,9 @@ const upcomingSection = document.querySelector('.upcoming')
 console.log(window.location.pathname)
 if (window.location.pathname == '/index.html') {
     console.log('Homepage')
+    
     findFilms(TRENDING_URL)
-    // findFilms(LATEST_URL) // films is undefined on this one
+    // findFilms(LATEST_URL) // Issue running this 3 times at once. setInterval doesnt work
     // findFilms(UPCOMING_URL)
 } else if (window.location.pathname == '/search.html') {
     findFilms(API_URL)
