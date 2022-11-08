@@ -60,9 +60,11 @@ section {
     position: relative;
 
 }
+
 .trending {
     position: absolute;
-    left: -130px;
+    left: -30vw;
+    margin: 0 2vw;
 }
 
 .trending,
