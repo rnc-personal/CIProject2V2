@@ -53,6 +53,7 @@ button {
     height: 32px;
     font-size: 0.9rem;
     font-weight: 700;
+    margin: 0;
 
 }
 
@@ -355,7 +356,7 @@ span.red {
         place-items: center;
         justify-content: center;
     }
-    
+
     .search-control {
         flex-direction: column;
     }
