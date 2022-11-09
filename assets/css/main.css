@@ -331,7 +331,11 @@ span.red {
 }
 
 /* RESPONSIVE */
-
+@media screen and (min-width: 769px) {
+    .footer-flex {
+        display: none;
+    }
+}
 
 @media screen and (max-width:1200px) {
     .hero-rte {
@@ -382,6 +386,7 @@ span.red {
         position: fixed;
         text-align: center;
         transition: height 0.4s ease-in-out;
+        height: 90px;
     }
 
     .mob-open {

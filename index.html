@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/script.js" defer></script>
-    
+
     <title>Movie Rating Finder App</title>
 </head>
 
@@ -16,7 +16,8 @@
         <a href="index.html"><img class="logo" src="assets/img/logo.svg" alt="Movie Finder" height="60" width="60"></a>
         <h1>WORTHWATCHING?</h1>
         <div class="search-container">
-            <a href="search.html"><img class="logo" src="assets/img/search.svg" alt="Movie Finder" height="60" width="60"></a>
+            <a href="search.html"><img class="logo" src="assets/img/search.svg" alt="Movie Finder" height="60"
+                    width="60"></a>
         </div>
         <form id="form" style="display: none;">
             <input type="text" id="search" class="search" placeholder="Search">
@@ -27,7 +28,8 @@
         <section class="hero-slides">
             <div class="slide">
                 <img src="assets/img/slide_1.jpg" alt="">
-                <div class="hero-rte"><h2>WELCOME TO WORTHWATCHING!</h2>
+                <div class="hero-rte">
+                    <h2>WELCOME TO WORTHWATCHING!</h2>
                     <p>The fastest way to know if whats on, is WorthWatching!</p>
                     <p>Click here to get started!</p>
                     <a href="search.html"><button>SEARCH</button></a>
@@ -35,7 +37,8 @@
             </div>
             <div class="slide">
                 <img src="assets/img/slide_2.jpg" alt="">
-                <div class="hero-rte"><h2>WELCOME TO WORTHWATCHING!</h2>
+                <div class="hero-rte">
+                    <h2>WELCOME TO WORTHWATCHING!</h2>
                     <p>The fastest way to know if whats on, is WorthWatching!</p>
                     <p>Click here to get started!</p>
                     <a href="search.html"><button>SEARCH</button></a>
@@ -43,7 +46,8 @@
             </div>
             <div class="slide">
                 <img src="assets/img/slide_3.jpg" alt="">
-                <div class="hero-rte"><h2>WELCOME TO WORTHWATCHING!</h2>
+                <div class="hero-rte">
+                    <h2>WELCOME TO WORTHWATCHING!</h2>
                     <p>The fastest way to know if whats on, is WorthWatching!</p>
                     <p>Click here to get started!</p>
                     <a href="search.html"><button>SEARCH</button></a>
@@ -59,7 +63,7 @@
             <h3>TRENDING</h3>
             <div class="trending">
                 <!-- Results automatically load -->
-              
+
             </div>
             <div class="mini-controls">
                 <div class="promo-card-prev"></div>
@@ -71,7 +75,8 @@
             <div class="footer-flex">
                 <div class="hidden-nav">
                     <h4>MENU</h4>
-                    <img class="logo" id="mob-nav" src="assets/img/logo.svg" alt="Movie Finder" height="60" width="60" onclick="miniNavToggle()">
+                    <img class="logo" id="mob-nav" src="assets/img/logo.svg" alt="Movie Finder" height="60" width="60"
+                        onclick="miniNavToggle()">
                     <ul>
                         <li><a href=""></a>HOME</a></li>
                         <li><a href=""></a>TRENDING</a></li>
@@ -80,7 +85,7 @@
                     </ul>
                 </div>
                 <div class="copyright">
-                    
+
                 </div>
             </div>
         </footer>
@@ -88,5 +93,19 @@
 
 
 </body>
+<style>
+    /*Fix for Header Height */
+    @media screen and (max-width: 768px) {
+
+        header h1,
+        header a {
+            display: block;
+        }
+
+        main {
+            padding-top: 0;
+        }
+    }
+</style>
 
 </html>
