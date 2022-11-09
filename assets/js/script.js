@@ -16,8 +16,9 @@ const cardArray = document.getElementsByClassName('film-card')
 
 //Make an initial call to results function so the page is not blank - returns most popular results
 //Results depend on page
+// '/CIProject2V2/index.html'
 
-if (window.location.pathname == '/CIProject2V2/index.html') {
+if (window.location.pathname == '/index.html') {
     document.body.style.cssText = "height:1300px"
 
     //******
@@ -63,12 +64,15 @@ if (window.location.pathname == '/CIProject2V2/index.html') {
         })
     })
 
+    console.log(slides, 'slides')
+  
+
     //Called here so the below event listeners can apply to the loaded cards
     findFilms(TRENDING_URL)
 
-} else if (window.location.pathname === '/CIProject2V2/trending.html') {
+} else if (window.location.pathname === '/trending.html') {
     findFilms(TRENDING_URL)
-} else if (window.location.pathname === '/CIProject2V2/current.html') {
+} else if (window.location.pathname === '/current.html') {
     findFilms(NOW_PLAYING)
 } else {
     findFilms(UPCOMING_URL)
@@ -93,7 +97,7 @@ async function findFilms(url) {
  */
 function buildResults(films) {
 
-    if (window.location.pathname === '/CIProject2V2/search.html') {
+    if (window.location.pathname === '/search.html') {
         //clears the default results when a search request is submitted and this function is called.
         main.innerHTML = ''
     }
@@ -110,6 +114,11 @@ function buildResults(films) {
         //The data and the response are both objects so the properties we want to use are defined here (using their names in the object/API docs)
         //A 'film' is made up of those specific object properties and can be used to output the data.
         //The loop returns the next set of data and will apply the specific data to that card below:
+
+        setTimeout(() => {
+            const homeCards = document.querySelector('.trending')
+            console.log(homeCards.childNodes.length, 'film cards')
+        }, 4000);
 
         const filmCard = document.createElement('div')
         filmCard.classList.add('film-card')
@@ -129,13 +138,14 @@ function buildResults(films) {
         `
         //Create cards for each result. Additional closing div to close the one created in line 42
         //Conditionally appends different cards depending on page.
-        if (window.location.pathname === '/CIProject2V2/index.html') {
+        if (window.location.pathname === '/index.html') {
             trendingSection.appendChild(filmCard)
-        } else if (window.location.pathname === '/CIProject2V2/trending.html') {
+          
+        } else if (window.location.pathname === '/trending.html') {
             main.appendChild(filmCard)
-        } else if (window.location.pathname === '/CIProject2V2/current.html') {
+        } else if (window.location.pathname === '/current.html') {
             main.appendChild(filmCard)
-        } else if (window.location.pathname === '/CIProject2V2/search.html') {
+        } else if (window.location.pathname === '/search.html') {
             main.appendChild(filmCard)
         }
     })
@@ -171,7 +181,7 @@ form.addEventListener('submit', function (e) {
     }
 })
 
-if (window.location.pathname === '/CIProject2V2/index.html') {
+if (window.location.pathname === '/index.html') {
     //Fix for home nav buttons (looping over like hero sliders proved troublesome so forcing style updates here)
     var amount = 600;
     var initial = 0;
