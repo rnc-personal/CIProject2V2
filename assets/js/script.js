@@ -18,7 +18,7 @@ const cardArray = document.getElementsByClassName('film-card')
 //Results depend on page
 // '/CIProject2V2/index.html'
 
-if (window.location.pathname == '/index.html') {
+if (window.location.pathname == '/CIProject2V2/index.html') {
     document.body.style.cssText = "height:1300px"
 
     //******
@@ -67,9 +67,9 @@ if (window.location.pathname == '/index.html') {
     //Called here so the below event listeners can apply to the loaded cards
     findFilms(TRENDING_URL)
 
-} else if (window.location.pathname === '/trending.html') {
+} else if (window.location.pathname === '/CIProject2V2/trending.html') {
     findFilms(TRENDING_URL)
-} else if (window.location.pathname === '/current.html') {
+} else if (window.location.pathname === '/CIProject2V2/current.html') {
     findFilms(NOW_PLAYING)
 } else {
     findFilms(UPCOMING_URL)
@@ -94,7 +94,7 @@ async function findFilms(url) {
  */
 function buildResults(films) {
 
-    if (window.location.pathname === '/search.html') {
+    if (window.location.pathname === '/CIProject2V2/search.html') {
         //clears the default results when a search request is submitted and this function is called.
         main.innerHTML = ''
     }
@@ -135,13 +135,13 @@ function buildResults(films) {
         `
         //Create cards for each result. Additional closing div to close the one created in line 42
         //Conditionally appends different cards depending on page.
-        if (window.location.pathname === '/index.html') {
+        if (window.location.pathname === '/CIProject2V2/index.html') {
             trendingSection.appendChild(filmCard)
-        } else if (window.location.pathname === '/trending.html') {
+        } else if (window.location.pathname === '/CIProject2V2/trending.html') {
             main.appendChild(filmCard)
-        } else if (window.location.pathname === '/current.html') {
+        } else if (window.location.pathname === '/CIProject2V2/current.html') {
             main.appendChild(filmCard)
-        } else if (window.location.pathname === '/search.html') {
+        } else if (window.location.pathname === '/CIProject2V2/search.html') {
             main.appendChild(filmCard)
         }
     })
@@ -183,7 +183,7 @@ function miniNavToggle() {
 
 }
 
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/CIProject2V2/index.html') {
     setTimeout(() => {
 
         cardArrayNew = Array.from(cardArray)
