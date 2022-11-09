@@ -8,7 +8,25 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/script.js" defer></script>
 
-    <title>Movie Rating Finder App</title>
+    <style>
+        /*Fix for Header Height */
+        @media screen and (max-width: 768px) {
+    
+            header h1,
+            header a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            main {
+                padding-top: 0;
+            }
+        }
+    </style>
+
+    <title>WorthWatching.com</title>
 </head>
 
 <body>
@@ -98,23 +116,5 @@
             </div>
         </footer>
     </main>
-
-    <style>
-        /*Fix for Header Height */
-        @media screen and (max-width: 768px) {
-    
-            header h1,
-            header a {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-    
-            main {
-                padding-top: 0;
-            }
-        }
-    </style>
 </body>
 </html>
