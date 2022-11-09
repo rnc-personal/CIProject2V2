@@ -155,16 +155,17 @@ section.hero-slides {
 .hero-rte {
     position: absolute;
     color: white;
-    left: 55%;
-    height: 60%;
-    bottom: 0%;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2.5rem;
-    text-align: right;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
+    transform: translateX(-50%);
+    left: 50%;
+    height: 45%;
+    text-align: center;
+    bottom: 25%;
 }
 
 .controls {
@@ -376,15 +377,6 @@ span.red {
 
 }
 
-@media screen and (max-width:1200px) {
-    .hero-rte {
-        transform: translateX(-50%);
-        left: 50%;
-        height: 25%;
-        text-align: center;
-    }
-}
-
 @media screen and (max-width:768px) {
     html {
         overflow-x: hidden;
@@ -421,7 +413,16 @@ span.red {
         text-align: center;
     }
 
-
+    .hero-rte {
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-50%);
+        left: 50%;
+        height: 74%;
+        text-align: center;
+        bottom: 0;
+        max-width: 72vw;
+    }
 
     .search {
         width: 80vw;
