@@ -187,11 +187,8 @@ if (window.location.pathname === '/index.html') {
     setTimeout(() => {
 
         cardArrayNew = Array.from(cardArray)
-
         const homeCards = document.querySelector('.trending')
-        console.log(homeCards.childNodes.length, 'film cards')
-
-
+        
         //******
         //Home Hero Cards
         //*****
