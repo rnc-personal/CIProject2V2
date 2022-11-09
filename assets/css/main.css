@@ -85,7 +85,7 @@ section {
 /*TO DO- Once JS loading issue is resolved, update this for all sections */
 .trending {
     position: absolute;
-    left: -30vw;
+    left: -34vw;
     margin: 0 2vw;
     transition: transform 0.4s ease-in-out;
 }

@@ -247,7 +247,7 @@ setTimeout(() => {
 
         cardArrayNew.forEach((card, idx) => {
             console.log(card[idx])
-            trendingSection.style.transform = `translateX(${2 * (idx - currentCard)}%)`
+            trendingSection.style.transform = `translateX(-${3 * (idx - currentCard)}%)`
         })
     })
 
@@ -262,7 +262,7 @@ setTimeout(() => {
 
         cardArrayNew.forEach((card, idx) => {
             console.log(card[idx])
-            trendingSection.style.transform = `translateX(${2 * (idx - currentCard)}%)`
+            trendingSection.style.transform = `translateX(${2 / (idx - currentCard)}%)`
         })
 
     });
