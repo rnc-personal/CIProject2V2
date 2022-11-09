@@ -133,7 +133,7 @@ section.hero-slides {
 
 /* Removed as unable to resolve issue */
 .mini-controls {
-    display: none;
+
     bottom: 0;
     position: absolute;
     display: flex;
@@ -144,7 +144,7 @@ section.hero-slides {
     transform: translateX(-50%);
 }
 
-/* .promo-card-prev,
+.promo-card-prev,
 .promo-card-next {
     height: 50px;
     width: 50px;
@@ -156,13 +156,13 @@ section.hero-slides {
 }
 
 .promo-card-next {
-    background-image: url(/assets/img/mini-chev-right.png);
+    background-image: url(assets/img/mini-chev-right.png);
 
 }
 
 .promo-card-prev {
-    background-image: url(/assets/img/mini-chev-left.png);
-} */
+    background-image: url(assets/img/mini-chev-left.png);
+}
 
 /*********/
 /* FONTS */
