@@ -226,7 +226,7 @@ setTimeout(() => {
     //Looping through slide elements to form an array and set their position
     for (let i = 0; i < cardArrayNew.length; i++) {
         let card = cardArrayNew[i]
-        card.style.transform = `translateX(${i + 100}px)`;
+        // card.style.transform = `translateX(${i + 100}px)`;
         console.log(cardArrayNew[i], 'card index')
     }
 
@@ -247,7 +247,7 @@ setTimeout(() => {
 
         cardArrayNew.forEach((card, idx) => {
             console.log(card[idx])
-            trendingSection.style.transform = `translateX(-${3 * (idx - currentCard)}%)`
+            trendingSection.style.transform = `translateX(-${4 * (idx - currentCard)}%)`
         })
     })
 
