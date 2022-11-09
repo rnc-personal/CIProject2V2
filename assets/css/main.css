@@ -380,6 +380,12 @@ span.red {
 
     footer {
         position: fixed;
+        text-align: center;
+        transition: height 0.4s ease-in-out;
+    }
+
+    .mob-open {
+        height: 240px;
     }
 
     footer h4 {
