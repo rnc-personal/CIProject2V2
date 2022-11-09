@@ -100,24 +100,22 @@
         </footer>
     </main>
 
-
+    <style>
+        /*Fix for Header Height */
+        @media screen and (max-width: 768px) {
+    
+            header h1,
+            header a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            main {
+                padding-top: 0;
+            }
+        }
+    </style>
 </body>
-<style>
-    /*Fix for Header Height */
-    @media screen and (max-width: 768px) {
-
-        header h1,
-        header a {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        main {
-            padding-top: 0;
-        }
-    }
-</style>
-
 </html>
