@@ -35,11 +35,22 @@ header {
     position: fixed;
     width: 100%;
     z-index: 10;
+} 
+
+a, a:visited {
+    text-decoration: none;
 }
 
 button {
     padding: 15px 30px;
     margin-top: 15px;
+    font-family: 'Poppins', san-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background-color: var(--focus-highlight);
+    outline: 0;
+    border: 0;
+    cursor: pointer;
 }
 
 .search-control {
@@ -82,7 +93,6 @@ section {
 
 }
 
-/*TO DO- Once JS loading issue is resolved, update this for all sections */
 .trending {
     position: absolute;
     left: -34vw;
@@ -129,8 +139,6 @@ section.hero-slides {
     text-align: right;
 }
 
-
-
 .controls {
     z-index: 5;
     display: flex;
@@ -152,10 +160,7 @@ section.hero-slides {
 }
 
 /* Home Card Carousel controls */
-
-/* Removed as unable to resolve issue */
 .mini-controls {
-
     bottom: 0;
     position: absolute;
     display: flex;
@@ -179,7 +184,6 @@ section.hero-slides {
 
 .promo-card-next {
     background-image: url('https://rnc-personal.github.io/CIProject2V2/assets/img/mini-chev-right.png');
-
 }
 
 .promo-card-prev {
@@ -237,7 +241,6 @@ section h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .film-card {
@@ -316,18 +319,6 @@ span.orange {
 
 span.red {
     color: crimson;
-}
-
-
-/* ANIMATION */
-@keyframes cardscroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100vw);
-    }
 }
 
 /* RESPONSIVE */

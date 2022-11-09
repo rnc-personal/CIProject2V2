@@ -64,9 +64,6 @@ if (window.location.pathname == '/index.html') {
         })
     })
 
-    console.log(slides, 'slides')
-
-
     //Called here so the below event listeners can apply to the loaded cards
     findFilms(TRENDING_URL)
 
@@ -140,16 +137,6 @@ function buildResults(films) {
         //Conditionally appends different cards depending on page.
         if (window.location.pathname === '/index.html') {
             trendingSection.appendChild(filmCard)
-
-
-
-            ///////////////////////////////////////////////
-
-
-
-            ///////////////////////////////////////////////
-
-
         } else if (window.location.pathname === '/trending.html') {
             main.appendChild(filmCard)
         } else if (window.location.pathname === '/current.html') {
@@ -190,113 +177,66 @@ form.addEventListener('submit', function (e) {
     }
 })
 
-if (window.location.pathname === '/index.html') {
-    //Fix for home nav buttons (looping over like hero sliders proved troublesome so forcing style updates here)
-    // var amount = 600;
-    // var initial = 0;
-    // document.querySelector(".promo-card-prev").addEventListener("click", function () {
-    //     initial += amount;
-    //     document.querySelector(".trending").style.transform = "translateX(" + initial + "px)"
-    // })
-
-    // document.querySelector(".promo-card-next").addEventListener("click", function () {
-    //     initial -= amount;
-    //     document.querySelector(".trending").style.transform = "translateX(" + initial + "px)"
-    // })
-}
-
 function miniNavToggle() {
     const miniMenu = document.getElementById('footer')
     miniMenu.classList.toggle('mob-open')
 
 }
 
-setTimeout(() => {
+if (window.location.pathname === '/index.html') {
+    setTimeout(() => {
 
-    cardArrayNew = Array.from(cardArray)
+        cardArrayNew = Array.from(cardArray)
 
-    const homeCards = document.querySelector('.trending')
-    console.log(homeCards.childNodes.length, 'film cards')
+        const homeCards = document.querySelector('.trending')
+        console.log(homeCards.childNodes.length, 'film cards')
 
 
-    //******
-    //Home Hero Cards
-    //*****
+        //******
+        //Home Hero Cards
+        //*****
 
-    //Looping through slide elements to form an array and set their position
-    for (let i = 0; i < cardArrayNew.length; i++) {
-        let card = cardArrayNew[i]
-        // card.style.transform = `translateX(${i + 100}px)`;
-        console.log(cardArrayNew[i], 'card index')
-    }
-
-    let currentCard = 0;
-    let maxCards = cardArrayNew.length / 2
-    const prevCard = document.querySelector('.promo-card-prev')
-    const nextCard = document.querySelector('.promo-card-next')
-
-    nextCard.addEventListener('click', function () {
-        if (currentCard === maxCards) {
-            currentCard = 0
-            console.log(currentCard)
-        } else {
-            currentCard++
-            console.log(currentCard)
+        //Looping through slide elements to form an array and set their position
+        for (let i = 0; i < cardArrayNew.length; i++) {
+            let card = cardArrayNew[i]
+            
+            
         }
 
-        cardArrayNew.forEach((card, idx) => {
-            console.log(card[idx])
-            trendingSection.style.transform = `translateX(-${2.4 * (idx - currentCard)}%)`
+        let currentCard = 0;
+        let maxCards = cardArrayNew.length / 2
+        const prevCard = document.querySelector('.promo-card-prev')
+        const nextCard = document.querySelector('.promo-card-next')
+
+        nextCard.addEventListener('click', function () {
+            if (currentCard === maxCards) {
+                currentCard = 0
+                
+            } else {
+                currentCard++
+                
+            }
+
+            cardArrayNew.forEach((card, idx) => {
+                
+                trendingSection.style.transform = `translateX(-${2.4 * (idx - currentCard)}%)`
+            })
         })
-    })
 
-    prevCard.addEventListener('click', function () {
-        if (currentCard === 0) {
-            currentCard = 0
-            console.log(currentCard)
-        } else {
-            currentCard--
-            console.log(currentCard)
-        }
+        prevCard.addEventListener('click', function () {
+            if (currentCard === 0) {
+                currentCard = 0
+                
+            } else {
+                currentCard--
+                
+            }
 
-        cardArrayNew.forEach((card, idx) => {
-            console.log(card[idx])
-            trendingSection.style.transform = `translateX(${2 / (idx - currentCard)}%)`
-        })
+            cardArrayNew.forEach((card, idx) => {
+        
+                trendingSection.style.transform = `translateX(${2 / (idx - currentCard)}%)`
+            })
 
-    });
-
-    // //Slider Animation
-    // let currentCard = 0;
-    // let maxCards = homeCards.childNodes.length - 1
-
-    // const prevSlide = document.querySelector('.promo-card-prev')
-    // const nextSlide = document.querySelector('.promo-card-next')
-
-    // // Next Control - On clicking the controls, update the slide: 
-    // nextSlide.addEventListener('click', function () {
-    //     if (currentCard === maxCards) {
-    //         currentCard = 0
-    //     } else {
-    //         currentCard++
-    //     }
-
-    //     homeCards.childNodes.forEach((card, idx) => {
-    //         console.log(card[idx])
-    //         // card.style.transform = `translateX(${100 * (idx - currentSlide)}%)`
-    //     })
-    // })
-
-    // // Prev Control - On clicking the controls, update the slide if its not the first one: 
-    // prevSlide.addEventListener('click', function () {
-    //     if (currentCard === 0) {
-    //         currentCard = 0
-    //     } else {
-    //         currentCard--
-    //     }
-
-    //     homeCards.childNodes.forEach((card, idx) => {
-    //         // card.style.transform = `translateX(${100 * (idx - currentSlide)}%)`
-    //     })
-    // })
-}, 4000);
+        });
+    }, 4000);
+}
