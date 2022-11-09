@@ -34,7 +34,7 @@ header {
     padding: 1rem;
     position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 32;
 }
 
 .main-nav-links {
@@ -143,6 +143,7 @@ section.hero-slides {
     height: 500px;
     margin: 6rem 0 1rem 0;
     background-color: black;
+    z-index: 10;
 }
 
 .slide {
@@ -169,12 +170,13 @@ section.hero-slides {
 }
 
 .controls {
-    z-index: 5;
+    z-index: 10;
     display: flex;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5vw;
+    justify-content: center;
+    position: relative;
+    margin-top: 420px;
+    height: 100px;
 }
 
 .controls img {
