@@ -18,7 +18,7 @@ const cardArray = document.getElementsByClassName('film-card')
 //Results depend on page
 
 if (window.location.pathname == '/CIProject2V2/index.html') {
-    document.body.style.cssText = "height:1300px"
+    
 
     //******
     //Home Hero Slides
