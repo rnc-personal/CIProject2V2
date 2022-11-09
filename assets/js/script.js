@@ -6,6 +6,7 @@
     const UPCOMING_URL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=58b0219670380f0425dd7bec4738e064&page=1'
     const IMG_PATH = 'https://image.tmdb.org/t/p/w500'
     const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=58b0219670380f0425dd7bec4738e064&query="' //note the space in readme
+    const NOW_PLAYING = 'https://api.themoviedb.org/3/movie/now_playing?api_key=58b0219670380f0425dd7bec4738e064'
 
     // defining some generic elements to use
     const main = document.getElementById('main')
@@ -66,7 +67,12 @@
         //Called here so the below event listeners can apply to the loaded cards
         findFilms(TRENDING_URL)
 
-    } else {
+    } else if (window.location.pathname === '/CIProject2V2/trending.html') {
+        findFilms(TRENDING_URL)
+    } else if (window.location.pathname === '/CIProject2V2/current.html') {
+        findFilms(NOW_PLAYING)
+    }  
+    else {
         findFilms(UPCOMING_URL)
     }
 
@@ -127,8 +133,12 @@
             //Conditionally appends different cards depending on page.
             if (window.location.pathname === '/CIProject2V2/index.html') {
                 trendingSection.appendChild(filmCard)
-            } else if (window.location.pathname === '/CIProject2V2/search.html') {
+            } else if (window.location.pathname === '/CIProject2V2/trending.html') {
                 main.appendChild(filmCard)
+            } else if (window.location.pathname === '/CIProject2V2/current.html') {
+                main.appendChild(filmCard)
+            } else if (window.location.pathname === '/CIProject2V2/search.html') {
+            main.appendChild(filmCard)
             }
         })
     }
