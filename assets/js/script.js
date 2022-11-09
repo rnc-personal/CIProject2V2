@@ -65,7 +65,6 @@
 
         //Called here so the below event listeners can apply to the loaded cards
         findFilms(TRENDING_URL)
-        cardAnimate()
 
     } else {
         findFilms(UPCOMING_URL)
@@ -164,30 +163,17 @@
         }
     })
 
+//Fix for home nav buttons (looping over like hero sliders proved troublesome so forcing style updates here)
+    var amount = 100;
+    var initial = 0;
+    document.querySelector(".promo-card-next").addEventListener("click", function() {
+      initial += amount;
+      document.querySelector(".trending").style.transform = "translateX(" + initial + "px)"
+    })
 
-function cardAnimate() {
-    console.log('called animate')
-    let nextBtn = document.querySelector('.promo-card-next')
-    let prevBtn = document.querySelector('.promo-card-prev')
-    let slideIncrementLeft = -60
-    let slideIncrementRight = 60
-    
-    for (let i = 0; i < cardArray.length; i++) {
-
-        setInterval(function () {
-            trendingSection.style.left = `${(slideIncrementLeft * i)}px`
-        }, 1000);
-        
-        // nextBtn.addEventListener('click', () => {
-        //     trendingSection.style.cssText = `left:${(slideIncrementLeft * i)}px`
-        //     console.log('click')
-        // })
-
-        // prevBtn.addEventListener('click', () => {
-        //     console.log('click')
-        //     trendingSection.style.cssText = `right:${slideIncrementRight / 2}px`
-        // })
-        } 
-    }
+    document.querySelector(".promo-card-prev").addEventListener("click", function() {
+        initial -= amount;
+        document.querySelector(".trending").style.transform = "translateX(" + initial + "px)"
+      })
 
     
