@@ -50,6 +50,14 @@ li {
     font-family: 'Poppins', sans-serif;
 }
 
+h4 {
+    color: white;
+}
+
+.copyright h4 {
+    font-size: 0.7rem;
+}
+
 a,
 a:visited {
     color: white;
@@ -359,10 +367,6 @@ span.red {
 
     footer {
         height: 80px;
-    }
-
-    footer h4 {
-        color: white;
     }
 
     .hidden-nav {
