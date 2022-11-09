@@ -35,9 +35,23 @@ header {
     position: fixed;
     width: 100%;
     z-index: 10;
-} 
+}
+
+.main-nav-links {
+    display: flex;
+    gap: 5%;
+}
+
+
+li {
+    list-style: none;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
 
 a, a:visited {
+    color: white;
     text-decoration: none;
 }
 
@@ -361,6 +375,10 @@ span.red {
         display: none;
     }
 
+    .main-nav-links {
+        display: none;
+    }
+
     .search-control {
         flex-direction: column;
     }
@@ -386,18 +404,6 @@ span.red {
 
     footer h4 {
         color: white;
-    }
-
-    footer a {
-        color: white;
-        text-decoration: none;
-    }
-
-    li {
-        list-style: none;
-        color: white;
-        font-size: 1.2rem;
-        font-family: 'Poppins', sans-serif;
     }
 
     .hidden-nav {
