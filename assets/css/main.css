@@ -321,7 +321,7 @@ span.red {
 }
 
 @media screen and (max-width:768px) {
-    html  {
+    html {
         overflow-x: hidden;
     }
 
@@ -330,9 +330,9 @@ span.red {
     }
 
     header {
-       display: grid;
-       place-items: center;
-       justify-content: center;
+        display: grid;
+        place-items: center;
+        justify-content: center;
     }
 
     header h1 {
@@ -359,7 +359,7 @@ span.red {
 
     .promo {
         margin: 0;
-        height: 4950px;
+        height: 9750px;
     }
 
     .mini-controls {
@@ -368,8 +368,9 @@ span.red {
 
     .trending {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         transform: translateX(-50%) !important;
-        left: 50%;
+        left: 48%;
     }
+
 }
