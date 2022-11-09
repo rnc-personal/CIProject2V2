@@ -164,7 +164,7 @@
     })
 
 //Fix for home nav buttons (looping over like hero sliders proved troublesome so forcing style updates here)
-    var amount = 100;
+    var amount = 600;
     var initial = 0;
     document.querySelector(".promo-card-next").addEventListener("click", function() {
       initial += amount;
