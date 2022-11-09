@@ -14,7 +14,8 @@
 <body>
     <header>
         <a href="index.html"><img class="logo" src="assets/img/logo.svg" alt="Movie Finder" height="60" width="60">
-        <h1>WORTHWATCHING?</h1></a>
+            <h1>WORTHWATCHING?</h1>
+        </a>
         <div class="search-container">
             <a href="search.html"><img class="logo" src="assets/img/search.svg" alt="Movie Finder" height="60"
                     width="60"></a>
@@ -99,7 +100,10 @@
 
         header h1,
         header a {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         main {
