@@ -42,8 +42,9 @@ footer {
     bottom: 0;
     width: 100vw;
     background-color: var(--secondary-color);
-    height: 100px;
+    height: 60px;
     left: 0;
+    border-top: 4px solid var(--focus-highlight);
 }
 
 /************/
@@ -358,7 +359,7 @@ span.red {
 
     .promo {
         margin: 0;
-        height: 5000px;
+        height: 4950px;
     }
 
     .mini-controls {
