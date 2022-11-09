@@ -231,8 +231,7 @@ setTimeout(() => {
     }
 
     let currentCard = 0;
-    let maxCards = cardArrayNew.length - 1
-
+    let maxCards = cardArrayNew.length / 2
     const prevCard = document.querySelector('.promo-card-prev')
     const nextCard = document.querySelector('.promo-card-next')
 
@@ -247,7 +246,7 @@ setTimeout(() => {
 
         cardArrayNew.forEach((card, idx) => {
             console.log(card[idx])
-            trendingSection.style.transform = `translateX(-${4 * (idx - currentCard)}%)`
+            trendingSection.style.transform = `translateX(-${2.4 * (idx - currentCard)}%)`
         })
     })
 
