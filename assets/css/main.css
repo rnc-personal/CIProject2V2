@@ -324,6 +324,10 @@ span.red {
         overflow-x: hidden;
     }
 
+    body {
+        height: 4000px;
+    }
+
     header {
        display: grid;
        place-items: center;
@@ -338,6 +342,10 @@ span.red {
         text-align: center;
     }
 
+    footer {
+        position: fixed;
+    }
+
     .search {
         width: 80vw;
         margin: 0 auto;
@@ -350,5 +358,17 @@ span.red {
 
     .promo {
         margin: 0;
+        height: 5000px;
+    }
+
+    .mini-controls {
+        display: none;
+    }
+
+    .trending {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        transform: translateX(-50%) !important;
+        left: 50%;
     }
 }
