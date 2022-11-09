@@ -355,6 +355,10 @@ span.red {
         place-items: center;
         justify-content: center;
     }
+    
+    .search-control {
+        flex-direction: column;
+    }
 
     header h1 {
         margin-right: unset;
