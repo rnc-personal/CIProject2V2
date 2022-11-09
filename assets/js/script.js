@@ -166,12 +166,12 @@
 //Fix for home nav buttons (looping over like hero sliders proved troublesome so forcing style updates here)
     var amount = 600;
     var initial = 0;
-    document.querySelector(".promo-card-next").addEventListener("click", function() {
+    document.querySelector(".promo-card-prev").addEventListener("click", function() {
       initial += amount;
       document.querySelector(".trending").style.transform = "translateX(" + initial + "px)"
     })
 
-    document.querySelector(".promo-card-prev").addEventListener("click", function() {
+    document.querySelector(".promo-card-next").addEventListener("click", function() {
         initial -= amount;
         document.querySelector(".trending").style.transform = "translateX(" + initial + "px)"
       })
