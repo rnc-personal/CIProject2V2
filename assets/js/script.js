@@ -173,6 +173,7 @@
         }
     })
 
+    if (window.location.pathname === '/CIProject2V2/index.html') {
 //Fix for home nav buttons (looping over like hero sliders proved troublesome so forcing style updates here)
     var amount = 600;
     var initial = 0;
@@ -185,5 +186,5 @@
         initial -= amount;
         document.querySelector(".trending").style.transform = "translateX(" + initial + "px)"
       })
-
+    }
     
