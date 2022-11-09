@@ -37,6 +37,11 @@ header {
     z-index: 10;
 }
 
+button {
+    padding: 15px 30px;
+    margin-top: 15px;
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -106,6 +111,7 @@ section.hero-slides {
     bottom: 0%;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2.5rem;
+    text-align: right;
 }
 
 
@@ -317,6 +323,7 @@ span.red {
         transform: translateX(-50%);
         left: 50%;
         height: 25%;
+        text-align: center;
     }
 }
 
